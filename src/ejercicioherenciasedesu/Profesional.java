@@ -12,19 +12,35 @@ import java.util.HashMap;
  * @author Valentine Chimezie
  */
 public class Profesional extends Sede {
-  private int numProgramas;  
+  private int noProgAltaC;  
   private HashMap<String,ProgramaDeFormacion>Programas;
   private Tecnologico SedeTecnologica;
   private EducacionContinuada SedeEducacionContinuada;
 
-    public Profesional(int numProgramas, String Nombre, String Direccion, int Telefono, double AreaConstruida, HashMap<String, PersonaBachiller> estudiante) {
+    public Profesional(int noProgAltaC, String Nombre, String Direccion, int Telefono, double AreaConstruida, HashMap<String, PersonaBachiller> estudiante) {
         super(Nombre, Direccion, Telefono, AreaConstruida, estudiante);
-        this.numProgramas = numProgramas;
+        this.noProgAltaC= noProgAltaC;
     }
 
     @Override
     public Sede darInformacion() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+     System.out.println("Numero de Programas: ");
+        System.out.print(this.noProgAltaC);
+        System.out.println("Nombre de la Sede: ");
+        System.out.print(this.getNombre());
+        System.out.println("Direccion de la Sede: ");
+        System.out.print(this.getDireccion());
+        System.out.println("Telefono de la Sede: ");
+        System.out.print(this.getTelefono());
+        System.out.println("Area Constuida de la Sede: ");
+        System.out.print(this.getAreaConstruida());
+        /*Imprimir el HashMap de estudiantes
+        System.out.println();
+        */
+        Profesional a;
+        a = new Profesional(this.noProgAltaC, this.getNombre(), this.getDireccion(),this.getTelefono(),this.getAreaConstruida(),this.getEstudiante());
+     
+        return a;
     }
 
    
