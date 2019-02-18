@@ -7,6 +7,7 @@ package ejercicioherenciasedesu;
 
 import java.util.HashMap;
 
+
 /**
  *
  * @author Valentine Chimezie
@@ -17,11 +18,26 @@ public class Profesional extends Sede {
   private Tecnologico SedeTecnologica;
   private EducacionContinuada SedeEducacionContinuada;
 
-    public Profesional(int noProgAltaC, String Nombre, String Direccion, int Telefono, double AreaConstruida, HashMap<String, PersonaBachiller> estudiante) {
-        super(Nombre, Direccion, Telefono, AreaConstruida, estudiante);
+    public Profesional(int noProgAltaC, String Nombre, String Direccion, int Telefono, double AreaConstruida, HashMap<String, PersonaBachiller> estudiantes) {
+        super(Nombre, Direccion, Telefono, AreaConstruida, estudiantes);
         this.noProgAltaC= noProgAltaC;
     }
 
+    public Profesional(String Nombre, String Direccion, int Telefono, double AreaConstruida, HashMap<String, PersonaBachiller> estudiantes) {
+        super(Nombre, Direccion, Telefono, AreaConstruida, estudiantes);
+    }
+
+    public Profesional(String Nombre, String Direccion, int Telefono, double AreaConstruida) {
+        super(Nombre, Direccion, Telefono, AreaConstruida);
+    }
+    
+/*Implementar el metodo que lista los programas ofrecidos en las posibles sedes tecnologicas 
+ y estudio continuo. Nota: Debe devolver un HashMap*/
+   private HashMap<String,ProgramaDeFormacion> ProgramasTyC(){
+    HashMap<String,ProgramaDeFormacion> x=new HashMap<>();
+    return x;
+           
+}
     @Override
     public Sede darInformacion() {
      System.out.println("Numero de Programas: ");
@@ -38,7 +54,7 @@ public class Profesional extends Sede {
         System.out.println();
         */
         Profesional a;
-        a = new Profesional(this.noProgAltaC, this.getNombre(), this.getDireccion(),this.getTelefono(),this.getAreaConstruida(),this.getEstudiante());
+        a = new Profesional(this.noProgAltaC ,this.getNombre(), this.getDireccion(),this.getTelefono(),this.getAreaConstruida(),this.getestudiantes());
      
         return a;
     }
