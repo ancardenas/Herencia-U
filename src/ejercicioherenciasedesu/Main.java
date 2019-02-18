@@ -9,7 +9,7 @@ package ejercicioherenciasedesu;
  *
  * @author Valentine Chimezie
  */
-public class EjercicioHerenciaSedesU {
+public class Main {
 
     /**
      * @param args the command line arguments

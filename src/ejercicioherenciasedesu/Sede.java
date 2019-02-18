@@ -18,14 +18,22 @@ public abstract  class Sede {
     private String Direccion;
     private  int Telefono;
     private double AreaConstruida;
-    private HashMap<String,PersonaBachiller> estudiante;
-    
-    public Sede(String Nombre, String Direccion, int Telefono, double AreaConstruida, HashMap<String, PersonaBachiller> estudiante) {
+    private HashMap<String,PersonaBachiller> estudiantes;
+
+    public Sede(String Nombre, String Direccion, int Telefono, double AreaConstruida) {
         this.Nombre = Nombre;
         this.Direccion = Direccion;
         this.Telefono = Telefono;
         this.AreaConstruida = AreaConstruida;
-        this.estudiante = estudiante;
+    }
+    
+    
+    public Sede(String Nombre, String Direccion, int Telefono, double AreaConstruida, HashMap<String, PersonaBachiller> estudiantes) {
+        this.Nombre = Nombre;
+        this.Direccion = Direccion;
+        this.Telefono = Telefono;
+        this.AreaConstruida = AreaConstruida;
+        this.estudiantes = estudiantes;
     }
 public abstract Sede darInformacion();
 
@@ -61,12 +69,12 @@ public abstract Sede darInformacion();
         this.AreaConstruida = AreaConstruida;
     }
 
-    public HashMap<String, PersonaBachiller> getEstudiante() {
-        return estudiante;
+    public HashMap<String, PersonaBachiller> getestudiantes() {
+        return estudiantes;
     }
 
-    public void setEstudiante(HashMap<String, PersonaBachiller> estudiante) {
-        this.estudiante = estudiante;
+    public void setestudiantes(HashMap<String, PersonaBachiller> estudiante) {
+        this.estudiantes = estudiante;
     }
 
 }
