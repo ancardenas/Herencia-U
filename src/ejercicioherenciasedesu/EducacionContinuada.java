@@ -5,13 +5,14 @@
  */
 package ejercicioherenciasedesu;
 
+import java.io.Serializable;
 import java.util.HashMap;
 
 /**
  *
  * @author Valentine Chimezie
  */
-public class EducacionContinuada extends Sede{
+public class EducacionContinuada extends Sede implements Serializable{
 private String CursoMasPopular;
 
     public EducacionContinuada(String CursoMasPopular, String Nombre, String Direccion, int Telefono, double AreaConstruida, HashMap<String, PersonaBachiller> estudiantes) {

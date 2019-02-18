@@ -5,24 +5,26 @@
  */
 package ejercicioherenciasedesu;
 
+import java.io.Serializable;
 import java.util.HashMap;
-
+import java.util.Map;
+import java.util.Scanner;
 /**
  *
  * @author Valentine Chimezie
  */
-public class Universidad {
+public class Universidad implements Serializable {
     private String Nombre;
     private HashMap<String,Sede> Sedes;
     private HashMap<String,PersonaBachiller> Estudiantes;
-
+    //private final Scanner sc =new Scanner(System.in);
     public Universidad(String Nombre) {
         this.Nombre = Nombre;
         this.Sedes = new HashMap<>();
         
     }
 
-   private void AñadirSedes(String Nombre,String Direccion,double AreaConstruida,int Telefono,int Tipo){
+   public void añadirSedes(String Nombre,String Direccion,double AreaConstruida,int Telefono,int Tipo){
        switch (Tipo){
            case 1: this.Sedes.put(Nombre, new Profesional(Nombre,Direccion,Telefono,AreaConstruida ));
        break;
@@ -32,12 +34,21 @@ public class Universidad {
        break;
        }
    } 
-    private void EliminarSedes(String Nombre){
+    public void eliminarSedes(String Nombre){
         this.Sedes.remove(Nombre);
     }
-    //Definan ustedes este metodo
-    private void ModificarSede(String Nombre){
-        
+    //Definan ustedes este metodo Done
+    public void modificarSede(String Nombre, int opcion,String nom){
+        switch(opcion){
+            case 1: this.Sedes.get(Nombre).setAreaConstruida(opcion);break;
+            case 2: this.Sedes.get(Nombre).setDireccion(Nombre);break;
+            case 3: System.out.println("Ingrese el nuevo nombre"); 
+                this.Sedes.get(Nombre).setNombre(nom);
+            Sede aux = this.Sedes.get(Nombre);
+            this.Sedes.remove(Nombre);
+            this.Sedes.put(nom, aux);break;
+            
+    }
     }
     private Sede InformacionSede(String Nombre){
        
@@ -56,9 +67,17 @@ public class Universidad {
     public HashMap<String, Sede> getSedes() {
         return Sedes;
     }
+    public void listSedes(){
+        for (Map.Entry<String, Sede> entry : Sedes.entrySet()) {
+            String key = entry.getKey();
+            System.out.println(Sedes.get(key).getNombre());
+            
+        }
+    }
+    
 
-    public void setSedes(HashMap<String, Sede> Sedes) {
-        this.Sedes = Sedes;
+    public void setSedes(String nombre, Sede sede) {
+        this.Sedes.put(nombre, sede);
     }
 
     public HashMap<String, PersonaBachiller> getEstudiantes() {

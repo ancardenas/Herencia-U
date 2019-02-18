@@ -5,11 +5,13 @@
  */
 package ejercicioherenciasedesu;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Valentine Chimezie
  */
-public class ProgramaDeFormacion {
+public class ProgramaDeFormacion implements Serializable {
  private String Nombre;
  private String Descripcion;
 

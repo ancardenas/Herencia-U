@@ -5,14 +5,16 @@
  */
 package ejercicioherenciasedesu;
 
+import java.io.Serializable;
 import java.util.HashMap;
+import java.util.Map;
 
 
 /**
  *
  * @author Valentine Chimezie
  */
-public class Profesional extends Sede {
+public class Profesional extends Sede implements Serializable{
   private int noProgAltaC;  
   private HashMap<String,ProgramaDeFormacion>Programas;
   private Tecnologico SedeTecnologica;
@@ -32,10 +34,25 @@ public class Profesional extends Sede {
     }
     
 /*Implementar el metodo que lista los programas ofrecidos en las posibles sedes tecnologicas 
- y estudio continuo. Nota: Debe devolver un HashMap*/
-   private HashMap<String,ProgramaDeFormacion> ProgramasTyC(){
-    HashMap<String,ProgramaDeFormacion> x=new HashMap<>();
-    return x;
+ y estudio continuo. Nota: Debe devolver un HashMap DONE*/
+         
+   private void ProgramasTyC(){
+       
+       HashMap<String,ProgramaDeFormacion> x=new HashMap<>();
+       x=this.SedeTecnologica.getProgramas();
+       for (Map.Entry<String, ProgramaDeFormacion> entry : x.entrySet()) {
+           String key = entry.getKey();
+           System.out.println(key);
+           
+       }
+       x=this.Programas;
+       for (Map.Entry<String, ProgramaDeFormacion> entry : x.entrySet()) {
+           String key = entry.getKey();
+           System.out.println(key);   
+       }
+               
+       
+    
            
 }
     @Override

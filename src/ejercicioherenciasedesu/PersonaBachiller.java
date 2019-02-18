@@ -5,11 +5,13 @@
  */
 package ejercicioherenciasedesu;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Valentine Chimezie
  */
-public class PersonaBachiller {
+public class PersonaBachiller implements Serializable{
    private String Nombre;
    private String Apellido;
    private String  Colegio;

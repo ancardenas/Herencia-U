@@ -6,13 +6,14 @@
  */
 package ejercicioherenciasedesu;
 
+import java.io.Serializable;
 import java.util.HashMap;
 
 /**
  *
  * @author Valentine Chimezie
  */
-public abstract  class Sede {
+public abstract  class Sede implements Serializable{
 
     private String Nombre;
     private String Direccion;

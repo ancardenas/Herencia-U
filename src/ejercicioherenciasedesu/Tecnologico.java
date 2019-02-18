@@ -5,18 +5,22 @@
  */
 package ejercicioherenciasedesu;
 
+import java.io.Serializable;
 import java.util.HashMap;
 
 /**
  *
  * @author Valentine Chimezie
  */
-public class Tecnologico extends Sede{
+public class Tecnologico extends Sede implements Serializable{
     private int noEstudiantes;
-
+    private HashMap<String,ProgramaDeFormacion>Programas;
     public Tecnologico(int noEstudiantes, String Nombre, String Direccion, int Telefono, double AreaConstruida, HashMap<String, PersonaBachiller> estudiante) {
         super(Nombre, Direccion, Telefono, AreaConstruida, estudiante);
         this.noEstudiantes = noEstudiantes;
+    }
+    public void addPrograma(String nom,ProgramaDeFormacion programa){
+        this.Programas.put(nom, programa);
     }
 
     public Tecnologico(String Nombre, String Direccion, int Telefono, double AreaConstruida, HashMap<String, PersonaBachiller> estudiante) {
@@ -55,6 +59,10 @@ public class Tecnologico extends Sede{
         a = new Tecnologico( this.noEstudiantes,this.getNombre(), this.getDireccion(),this.getTelefono(),this.getAreaConstruida(),this.getestudiantes());
      
         return a;
+    }
+
+    public HashMap<String, ProgramaDeFormacion> getProgramas() {
+        return Programas;
     }
     
 }
