@@ -56,24 +56,21 @@ public class Profesional extends Sede implements Serializable{
            
 }
     @Override
-    public Sede darInformacion() {
-     System.out.println("Numero de Programas: ");
-        System.out.print(this.noProgAltaC);
-        System.out.println("Nombre de la Sede: ");
-        System.out.print(this.getNombre());
-        System.out.println("Direccion de la Sede: ");
-        System.out.print(this.getDireccion());
-        System.out.println("Telefono de la Sede: ");
-        System.out.print(this.getTelefono());
-        System.out.println("Area Constuida de la Sede: ");
-        System.out.print(this.getAreaConstruida());
+    public void darInformacion() {
+     System.out.print("Numero de Programas: ");
+        System.out.println(this.noProgAltaC);
+        System.out.print("Nombre de la Sede: ");
+        System.out.println(this.getNombre());
+        System.out.print("Direccion de la Sede: ");
+        System.out.println(this.getDireccion());
+        System.out.print("Telefono de la Sede: ");
+        System.out.println(this.getTelefono());
+        System.out.print("Area Constuida de la Sede: ");
+        System.out.println(this.getAreaConstruida());
         /*Imprimir el HashMap de estudiantes
         System.out.println();
         */
-        Profesional a;
-        a = new Profesional(this.noProgAltaC ,this.getNombre(), this.getDireccion(),this.getTelefono(),this.getAreaConstruida(),this.getestudiantes());
-     
-        return a;
+        
     }
 
    

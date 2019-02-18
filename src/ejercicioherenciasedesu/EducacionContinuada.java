@@ -37,24 +37,24 @@ private String CursoMasPopular;
     }
 
     @Override
-    public EducacionContinuada darInformacion() {
-        System.out.println("Curso mas Popular: ");
-        System.out.print(this.CursoMasPopular);
-        System.out.println("Nombre de la Sede: ");
-        System.out.print(this.getNombre());
-        System.out.println("Direccion de la Sede: ");
-        System.out.print(this.getDireccion());
-        System.out.println("Telefono de la Sede: ");
-        System.out.print(this.getTelefono());
-        System.out.println("Area Constuida de la Sede: ");
-        System.out.print(this.getAreaConstruida());
+    public void darInformacion() {
+        System.out.print("Curso mas Popular: ");
+        System.out.println(this.CursoMasPopular);
+        System.out.print("Nombre de la Sede: ");
+        System.out.println(this.getNombre());
+        System.out.print("Direccion de la Sede: ");
+        System.out.println(this.getDireccion());
+        System.out.print("Telefono de la Sede: ");
+        System.out.println(this.getTelefono());
+        System.out.print("Area Constuida de la Sede: ");
+        System.out.println(this.getAreaConstruida());
         /*Imprimir el HashMap de estudiantes
         System.out.println();
         */
         EducacionContinuada a;
         a = new EducacionContinuada(this.CursoMasPopular, this.getNombre(), this.getDireccion(),this.getTelefono(),this.getAreaConstruida(),this.getestudiantes());
      
-        return a;
+        
     }
     
     

@@ -36,7 +36,7 @@ public abstract  class Sede implements Serializable{
         this.AreaConstruida = AreaConstruida;
         this.estudiantes = estudiantes;
     }
-public abstract Sede darInformacion();
+public abstract void darInformacion();
 
     public String getNombre() {
         return Nombre;
