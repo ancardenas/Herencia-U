@@ -19,6 +19,7 @@ public class Main {
 
     /**
      * @param args the command line arguments
+     * Se uso como formato de guardado la serializacion
      */
     public static void main(String[] args) {
         // TODO code application logic here
