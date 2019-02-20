@@ -41,7 +41,7 @@ public class Main {
         /**
          * Lectura del archivo se hace al principio de la ejecucion para evitar perder informacion
          */
-        try {
+        /*try {
             entrada =new FileInputStream(objetos);
             reader = new ObjectInputStream(entrada);
             UN = (Universidad) reader.readObject();
@@ -49,8 +49,11 @@ public class Main {
             //UN.listSedes();
         } catch (IOException | ClassNotFoundException ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        try {while (true){
+        }*/
+
+        
+        while (true){
+            try {
         System.out.println("Bienvenido a la Universidad Nacional");
         System.out.println("Que desea Hacer?");
         System.out.println("1 Añadir Sede");
@@ -73,10 +76,12 @@ public class Main {
                 int tel = sc.nextInt();
                 System.out.println("El tipo de la sede es: 1 Profesional, 2 Tecnologico, 3 Educacion continua ");
                 int tipo = sc.nextInt();
-                UN.añadirSedes(Nombre, Direccion, are, tel, tipo);break;}catch (Exception ex){
+                UN.añadirSedes(Nombre, Direccion, are, tel, tipo);}catch (Exception ex){
                    System.out.println("Los Datos solicitados han sido introducidos de manera incorrecta por favor verifique y vuelva a intentarlo");
                    System.exit(0);
-               }case 2: System.out.println("Not implemented yet");break;
+               }break;
+            case 2: System.out.println("Ingrese el nombre de la Sede que desea modificar");
+               UN.modificarSede(sc.next()); break;
                case 3:System.out.println("Ingrese el nombre de la sede que desea eliminar");
                
                UN.eliminarSedes(sc.next());break;
@@ -100,7 +105,7 @@ public class Main {
         /**
          * Escritura del archivo se hace cada vez que se realiza un pocedimiento exitoso del anterior switch
          */
-        try {
+        /*try {
             salida =new FileOutputStream(objetos);
             writer =new ObjectOutputStream(salida);
             writer.writeObject(UN);
@@ -110,11 +115,11 @@ public class Main {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         } catch (NullPointerException ex) {
             System.err.println("Null pointer");
-        }
+        }*/
         
         
-    }}catch(Exception ex){
+    }catch(Exception ex){
             System.out.println("Vuelva a inentar");
-    }
+    }}
     
 }}

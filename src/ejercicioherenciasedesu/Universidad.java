@@ -38,15 +38,31 @@ public class Universidad implements Serializable {
         this.Sedes.remove(Nombre);
     }
     //Definan ustedes este metodo Done
-    public void modificarSede(String Nombre, int opcion,String nom){
+    public void modificarSede(String Nombre){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("1 Area");
+        System.out.println("2 Direccion");
+        System.out.println("3 Nombre");
+        System.out.println("4 Telefono");
+        int opcion = sc.nextInt();
+        
         switch(opcion){
-            case 1: this.Sedes.get(Nombre).setAreaConstruida(opcion);break;
-            case 2: this.Sedes.get(Nombre).setDireccion(Nombre);break;
+            
+            
+            case 1:System.out.println("Ingrese el area de la sede"); 
+                this.Sedes.get(Nombre).setAreaConstruida(sc.nextInt());break;
+            case 2:System.out.println("Ingrese Direccion");
+                this.Sedes.get(Nombre).setDireccion(sc.next());break;
             case 3: System.out.println("Ingrese el nuevo nombre"); 
-                this.Sedes.get(Nombre).setNombre(nom);
+            String nom = sc.next();
+            this.Sedes.get(Nombre).setNombre(nom);
             Sede aux = this.Sedes.get(Nombre);
             this.Sedes.remove(Nombre);
             this.Sedes.put(nom, aux);break;
+            case 4: System.out.println("Ingrese el nuevo telefono");
+            this.Sedes.get(Nombre).setTelefono(sc.nextInt());break;
+            
+            
             
     }
     }
